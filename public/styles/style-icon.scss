@@ -1,0 +1,25 @@
+$color: $color-gray;
+.mud-nav-link:not(.mud-nav-link-disabled) .mud-nav-link-icon.mud-nav-link-icon-default {
+  color: $color;
+}
+.mud-icon-root.mud-svg-icon {
+  fill: $color;
+}
+.mud-icon-root.mud-svg-icon {
+  fill: $color;
+}
+
+.mud-nav-link-icon {
+  text-align: center;
+}
+.mud-icon-size-medium {
+  font-size: 1.6rem;
+}
+.mud-icon-root {
+  width: 1.4em;
+  height: 1.4em;
+  display: inline-block;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  flex-shrink: 0;
+  user-select: none;
+}

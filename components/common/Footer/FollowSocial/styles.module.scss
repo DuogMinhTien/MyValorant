@@ -1,0 +1,18 @@
+@import '~/public/styles/base.scss';
+.title {
+  color: $color-white;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  @include Responsive('pc') {
+    margin-bottom: 40px;
+    font-size: 2rem;
+  }
+}
+.social-frame {
+  display: flex;
+  column-gap: 20px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}

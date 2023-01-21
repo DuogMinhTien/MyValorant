@@ -1,0 +1,28 @@
+@import '~/public/styles/base.scss';
+.navigation-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include Responsive('pc') {
+    align-items: flex-start;
+  }
+  .title {
+    color: $color-white;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    @include Responsive('pc') {
+      margin-bottom: 20px;
+      font-size: 2.4rem;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    align-items: center;
+    @include Responsive('pc') {
+      align-items: flex-start;
+    }
+  }
+}

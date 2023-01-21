@@ -1,0 +1,48 @@
+@import '~/public/styles/base.scss';
+.form-control {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #fff;
+  border-radius: 12px;
+  .form-input {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    &__icon {
+      position: relative;
+    }
+    input {
+      width: 100%;
+      font-weight: 500;
+      font-size: 1.8rem;
+      line-height: 2.8rem;
+      border: none;
+      outline: none;
+      flex: 1;
+      font-family: inherit;
+      &::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #9ca3af;
+        opacity: 1; /* Firefox */
+      }
+
+      &:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: #9ca3af;
+      }
+
+      &::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: #9ca3af;
+      }
+    }
+  }
+  &.responsive {
+    @include Responsive('mobile') {
+      padding: 6px 16px;
+      input {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

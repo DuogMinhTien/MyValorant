@@ -1,0 +1,63 @@
+@import '~/public/styles/base.scss';
+
+.popup-nav-bar {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background-color: #fff;
+  border-radius: 12px;
+  height: max-content;
+  width: max-content;
+  transform: translateX(200%);
+  z-index: calc($z-index-modal + 1);
+  padding: 12px 20px;
+  padding-bottom: 60px;
+  min-width: 300px;
+  max-height: calc(100vh - 30px);
+  overflow-y: auto;
+  // @include style-vertical-scroll();
+  .close-icon {
+    color: rgb(156 163 175);
+    position: absolute;
+    right: 11px;
+    top: 11px;
+    width: max-content;
+    height: max-content;
+    cursor: pointer;
+  }
+  &.open-nav-bar {
+    animation: openPopup 0.4s forwards, openPopup2 0.2s 0.4s forwards;
+    @keyframes openPopup {
+      to {
+        transform: translateX(-10px);
+      }
+    }
+    @keyframes openPopup2 {
+      from {
+        transform: translateX(-10px);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+  }
+  &.close-nav-bar {
+    animation: closePopup 0.4s forwards, closePopup2 0.4s 0.2s forwards;
+    @keyframes closePopup {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-10px);
+      }
+    }
+    @keyframes closePopup2 {
+      from {
+        transform: translateX(-10px);
+      }
+      to {
+        transform: translateX(200%);
+      }
+    }
+  }
+}

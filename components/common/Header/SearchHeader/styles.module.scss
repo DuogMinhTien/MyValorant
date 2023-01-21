@@ -1,0 +1,13 @@
+@import '~/public/styles/base.scss';
+.search-header {
+  margin-left: auto;
+  margin-right: 18px;
+  @include Responsive('pc') {
+    display: none;
+  }
+}
+.search-header-pc {
+  @include Responsive('mobile') {
+    display: none;
+  }
+}

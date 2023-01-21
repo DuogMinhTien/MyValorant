@@ -1,0 +1,37 @@
+@import '~/public/styles/base.scss';
+
+.table-of-contents {
+  width: 100%;
+  border-radius: 16px;
+  background-color: rgb(241 245 249);
+  padding: 40px;
+  margin-bottom: 50px;
+
+  ol {
+    list-style: none;
+    @for $i from 3 through 6 {
+      .item-title-h#{$i} {
+        margin-left: calc(#{40 * ($i - 2)}px);
+      }
+    }
+    li {
+      a {
+        text-decoration: none;
+        color: #292a2a;
+      }
+    }
+  }
+  .title-table {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 3.6rem;
+    margin-bottom: 20px;
+  }
+  @include Responsive('mobile') {
+    padding: 20px;
+    .title-table {
+      font-size: 24px;
+      line-height: 3.2rem;
+    }
+  }
+}

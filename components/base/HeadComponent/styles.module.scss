@@ -1,0 +1,14 @@
+@import '~/public/styles/base.scss';
+.head-component {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 16px;
+  row-gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 1.2rem;
+  margin-bottom: 40px;
+  @include Responsive('mobile') {
+    margin-bottom: 20px;
+  }
+}

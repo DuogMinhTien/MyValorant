@@ -1,0 +1,7 @@
+@import '~/public/styles/base.scss';
+
+.category {
+  @include Responsive('mobile') {
+    padding: 0 14px;
+  }
+}

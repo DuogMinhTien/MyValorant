@@ -1,0 +1,30 @@
+@import '~/public/styles/base.scss';
+.container-404 {
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(to top right, $color-purple, $color-sky);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .img {
+    max-width: 300px;
+    margin-bottom: 40px;
+  }
+  .text-404 {
+    font-weight: 700;
+    text-align: center;
+    font-size: 4.8rem;
+    color: #fff;
+  }
+  @include Responsive('pc') {
+    padding: 80px;
+    .img {
+      max-width: 500px;
+    }
+    .text-404 {
+      font-weight: 700;
+      text-align: center;
+      font-size: 12.8rem;
+    }
+  }
+}

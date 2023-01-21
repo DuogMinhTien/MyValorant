@@ -1,0 +1,25 @@
+@import '~/public/styles/base.scss';
+.see-all {
+  color: $color-purple;
+  text-decoration: none;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 500;
+  column-gap: 1.2rem;
+  display: flex;
+  align-items: center;
+  @include Responsive('mobile') {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+  .icon {
+    width: 24px;
+    height: 24px;
+    @include transition-all(0.15s);
+  }
+  &:hover {
+    .icon {
+      transform: translateX(4px);
+    }
+  }
+}

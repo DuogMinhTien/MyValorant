@@ -1,0 +1,230 @@
+// coinr4
+.post-outside-content {
+  * {
+    font-family: $font !important;
+    text-decoration: none;
+  }
+  a {
+    color: #7733f3;
+    text-decoration: none;
+    * {
+      text-decoration: none;
+    }
+  }
+  blockquote {
+    border-left-width: 2px;
+    border-color: rgb(110 51 241);
+    padding: 2rem;
+    color: rgb(107 107 107);
+  }
+  figcaption {
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-style: italic;
+    color: rgb(107 107 107);
+    @include Responsive('pc') {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+    }
+  }
+  h1,
+  h2 {
+    font-size: 3rem !important;
+    line-height: 140% !important;
+    span,
+    p,
+    label,
+    pre {
+      font-weight: bold !important;
+      font-size: 3rem !important;
+      line-height: 140% !important;
+    }
+    @include Responsive('mobile') {
+      font-size: 2rem;
+      span,
+      p,
+      label,
+      pre {
+        font-size: 2rem !important;
+      }
+    }
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 2.4rem !important;
+    line-height: 140% !important;
+    span,
+    p,
+    label,
+    pre {
+      font-weight: bold !important;
+      font-size: 2.4rem !important;
+      line-height: 140% !important;
+    }
+    @include Responsive('mobile') {
+      font-size: 2.4rem;
+      span,
+      p,
+      label,
+      pre {
+        font-size: 2.4rem !important;
+      }
+    }
+  }
+
+  // blockquote {
+  //   font-size: 1.6rem;
+  //   border-left: 3px solid $color-gray;
+  //   background-color: $color-light-gray;
+  //   padding: 16px 24px;
+  //   font-style: italic;
+  //   line-height: 160%;
+  // }
+  span,
+  p,
+  label,
+  pre {
+    font-weight: 400 !important;
+    font-size: 1.8rem !important;
+    line-height: 160% !important;
+    white-space: pre-wrap !important;
+    font-family: $font;
+    @include Responsive('mobile') {
+      font-size: 1.6rem;
+    }
+  }
+  ul {
+    margin-left: 48px;
+  }
+  img {
+    width: 100%;
+    border-radius: 16px;
+  }
+  .coinr4-image-title {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    /* identical to box height, or 26px */
+
+    letter-spacing: 0.01em;
+
+    /* Neutrals/dark grey */
+
+    color: #7e7e7e;
+  }
+  .coinr4-title-text-content {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 140%;
+    color: $color-black;
+    font-family: $font;
+  }
+  .coinr4-heading--h2 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 140%;
+    /* or 39px */
+
+    letter-spacing: 0.01em;
+
+    /* Neutrals/black */
+
+    color: #303030;
+  }
+  // .coinr4-quote.twitter-tweet {
+  //   display: none;
+  //   @include Responsive('mobile') {
+  //     &.coinr4-display-for-web {
+  //       display: block;
+  //     }
+  //   }
+  // }
+
+  // .coinr4-display-for-mobile {
+  //   display: none;
+  //   @include Responsive('mobile') {
+  //     display: block;
+  //   }
+  // }
+  .post-content-dark {
+    .coinr4-title-text-content {
+      color: $color-white;
+    }
+  }
+
+  .wp-block-embed-twitter,
+  .wrapper__twitter {
+    border-radius: 12px;
+    border: 1px solid #b1b5c3;
+    padding: 12px;
+
+    .header__twitter {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      column-gap: 8px;
+      &--list-info {
+        margin-left: 0;
+      }
+      &-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 100rem;
+      }
+
+      &-text {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+
+        &-name {
+          font-weight: bold;
+          font-size: 1.8rem;
+        }
+
+        .header__twitter--list-info {
+          display: flex;
+          list-style: none;
+          align-items: center;
+          column-gap: 4px;
+
+          .header__twitter--item-info,
+          .header__twitter--item-info-dot {
+            font-weight: 400;
+            font-size: 1.4rem;
+            color: $color-dark-gray;
+          }
+        }
+      }
+    }
+
+    .content__twitter-footer {
+      color: $color-dark-gray;
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+      font-size: 1.6rem;
+      &-link {
+        white-space: initial;
+      }
+      a {
+        color: inherit;
+        font-size: inherit;
+        text-decoration: none;
+      }
+
+      span {
+        margin-left: 8px;
+        color: inherit;
+        font-size: inherit;
+      }
+    }
+  }
+}

@@ -1,0 +1,110 @@
+@mixin container($reduce-width: 0px) {
+  max-width: 1270px;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+}
+
+@mixin destroyContainer() {
+  max-width: none !important;
+  min-width: 0 !important;
+  padding: 15px !important;
+}
+
+@mixin setWidth {
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: auto;
+  }
+}
+
+@mixin userSelect($choose) {
+  user-select: $choose;
+  -ms-user-select: $choose;
+  -moz-user-select: $choose;
+  -webkit-user-select: $choose;
+}
+
+@mixin Image() {
+  overflow: hidden;
+
+  span {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: center;
+    -o-object-fit: cover;
+    -o-object-position: center;
+  }
+}
+
+@mixin clampText($number: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $number;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+//pc
+@mixin Responsive($canvas: 'pc') {
+  @if $canvas == 'pc' {
+    @media only screen and (min-width: $PC-width) {
+      @content;
+    }
+  } @else if $canvas == 'mobile' {
+    @media only screen and (max-width: $PC-width) {
+      @content;
+    }
+  }
+}
+@mixin ResponsiveCustom($maxWidth, $minWidth: 0) {
+  @media only screen and (max-width: $mobile-width) and (min-width: $minWidth) {
+    @content;
+  }
+}
+@mixin text-style() {
+  color: $color-white;
+  font-size: 1.4rem;
+  line-height: 2.275rem;
+  text-decoration: none;
+  @include Responsive('pc') {
+    line-height: 1.625;
+    font-size: 1.6rem;
+  }
+}
+
+@mixin transition-all($time: 0.4s) {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: $time;
+}
+
+@mixin hide-scrollbar() {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin style-vertical-scroll() {
+  &::-webkit-scrollbar {
+    width: 3px;
+    border-radius: 24px;
+    right: 15px;
+    position: relative;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 24px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #acacac;
+    border-radius: 24px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+}

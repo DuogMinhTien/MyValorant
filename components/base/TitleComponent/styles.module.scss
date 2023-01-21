@@ -1,0 +1,23 @@
+@import '~/public/styles/base.scss';
+
+.title-component {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 2.8rem;
+  color: $color-dark-purple;
+  position: relative;
+  // margin-top: calc(0.8rem + 0.4rem);
+  &::before {
+    content: '';
+    position: absolute;
+    top: -0.8rem;
+    left: 0;
+    height: 0.4rem;
+    width: 3.6rem;
+    background-color: $color-sky;
+  }
+  @include Responsive('pc') {
+    font-size: 3rem;
+    line-height: 3.6rem;
+  }
+}

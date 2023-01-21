@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Signika';
+  src: url(./Signika-Light.ttf);
+  font-style: normal;
+  font-weight: 300;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Signika';
+  src: url(./Signika-Regular.ttf);
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Signika';
+  src: url(./Signika-Medium.ttf);
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Signika';
+  src: url(./Signika-SemiBold.ttf);
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Signika';
+  src: url(./Signika-Bold.ttf);
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+}

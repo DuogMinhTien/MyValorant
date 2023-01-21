@@ -1,0 +1,38 @@
+@import '~/public/styles/base.scss';
+.btn-primary {
+  border-radius: 8px;
+  background-color: $color-purple;
+  font-weight: 600;
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+  padding: 16px 44px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  width: max-content;
+  position: relative;
+  font-family: inherit;
+  &.responsive {
+    @include Responsive('mobile') {
+      padding: 6px 24px;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+    }
+  }
+  &.upperCase {
+    text-transform: uppercase;
+  }
+  &.center {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.link-href {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

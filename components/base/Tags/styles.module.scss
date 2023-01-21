@@ -1,0 +1,24 @@
+@import '~/public/styles/base.scss';
+.tag {
+  background-color: #f3edff;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  padding: 8px 10px;
+  max-width: 100px;
+  color: #6b6b6b;
+  font-weight: 600;
+  border-radius: 1.2rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+  text-decoration: none;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: max-content;
+  @include Responsive('mobile') {
+    font-size: 0.96rem;
+    padding: 0.2rem 0.8rem;
+    max-width: 80px;
+  }
+}

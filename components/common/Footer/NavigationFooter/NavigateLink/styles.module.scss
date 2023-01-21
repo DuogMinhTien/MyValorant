@@ -1,0 +1,8 @@
+@import '~/public/styles/base.scss';
+.navigate-link {
+  @include text-style();
+  @include transition-all(0.2s);
+  &:hover {
+    opacity: 0.6;
+  }
+}
