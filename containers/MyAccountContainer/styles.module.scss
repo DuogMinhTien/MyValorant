@@ -1,0 +1,67 @@
+.puuid {
+  color: rgb(156, 156, 156);
+  font-weight: 400;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+.infor-account {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 100rem;
+  }
+  .detail-infor {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+    .name-tag {
+      display: flex;
+      align-items: center;
+      column-gap: 12px;
+      .name-acc {
+        color: #fff;
+        font-size: 3rem;
+        font-family: 'Signika';
+      }
+      .tagline-acc {
+        color: $color-gray;
+        font-size: 1.6rem;
+      }
+    }
+    .level {
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      width: 76px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .border-level {
+        position: relative;
+      }
+      .label-level {
+        position: relative;
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+.get-now-match {
+  background-color: $color-primary;
+  display: inline-block;
+  padding: 10px 16px;
+  margin-top: 16px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.6rem;
+  cursor: pointer;
+}

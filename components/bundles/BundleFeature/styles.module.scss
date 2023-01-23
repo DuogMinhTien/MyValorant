@@ -1,5 +1,66 @@
 .bundle-feature {
   width: 100%;
   border: 1px solid #fff;
-  height: 30%;
+  aspect-ratio: 9/4;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .infor {
+    padding: 24px;
+    .time-remain {
+      color: #fff;
+      position: relative;
+      z-index: 1;
+      font-weight: bold;
+      display: flex;
+      column-gap: 12px;
+      font-size: 2rem;
+      .remaining {
+        color: #d9e8b6;
+      }
+    }
+    .title {
+      font-size: 6rem;
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      text-transform: uppercase;
+      font-family: 'Kanit';
+    }
+    .sub-title {
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      position: relative;
+      color: #fff;
+      z-index: 1;
+      font-size: 2rem;
+    }
+  }
+  .price {
+    position: absolute;
+    z-index: 2;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(119, 241, 219, 0.6);
+    color: #fff;
+    column-gap: 12px;
+    font-size: 2.4rem;
+    padding: 12px 32px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+  }
 }

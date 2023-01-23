@@ -20,7 +20,7 @@ const NavBar = () => {
           label={'Thông tin'}
           list={[
             {
-              icon: 'fa-solid fa-user',
+              icon: 'fa-solid fa-users',
               label: 'Đặc vụ',
               to: '/agents',
             },
@@ -29,8 +29,14 @@ const NavBar = () => {
               label: 'Bundles',
               to: '/bundles',
             },
+            {
+              icon: 'fa-sharp fa-solid fa-map',
+              label: 'Bản đồ',
+              to: '/maps',
+            },
           ]}
         />
+        <ItemNav icon={'fa-solid fa-user'} label={'Tài khoản của tôi'} to="/my-account" />
       </div>
     </div>
   );

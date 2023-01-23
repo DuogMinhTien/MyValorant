@@ -1,8 +1,10 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import styles from './styles.module.scss';
-export default function ItemNav({ icon, label, list = [] }) {
+export default function ItemNav({ icon, label, list = [], to = '/' }) {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
   return (
     <>
       <div
@@ -10,6 +12,8 @@ export default function ItemNav({ icon, label, list = [] }) {
         onClick={() => {
           if (list?.length > 0) {
             setOpen((prev) => !prev);
+          } else {
+            router.push(to);
           }
         }}
       >

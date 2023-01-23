@@ -1,5 +1,6 @@
 {
   "PRODUCTION_VERSION": "Ver Local",
   "SERVER_URI": "https://valorant-api.com/v1",
-  "WEB_URI": "http://nftbuzz.abc"
+  "WEB_URI": "http://nftbuzz.abc",
+  "SERVER_URI_2": "https://api.henrikdev.xyz/valorant/v2"
 }

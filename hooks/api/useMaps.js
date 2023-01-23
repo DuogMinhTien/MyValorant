@@ -2,9 +2,9 @@ import { useInfiniteQuery, useMutation, useQuery } from 'react-query';
 import { API } from '~/core/api/config';
 import api, { encodeQueryData, setDefaultHeaders } from '~/core/api/api';
 
-async function getFeature() {
-  //   filters = encodeQueryData({ ...filters, isPlayableCharacter: true });
-  const { data } = await api.get('https://api.henrikdev.xyz/valorant/v2/store-featured');
+async function getMaps(filters) {
+  filters = encodeQueryData(filters);
+  const { data } = await api.get(API.MAPS.FULL + '?' + filters);
   return data;
 }
 

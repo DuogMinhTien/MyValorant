@@ -1,5 +1,6 @@
 {
   "PRODUCTION_VERSION": "ver 1.0.0",
   "SERVER_URI": "https://valorant-api.com/v1",
-  "WEB_URI": "https://catonchain.com"
+  "WEB_URI": "https://catonchain.com",
+  "SERVER_URI_2": "https://api.henrikdev.xyz/valorant/v2"
 }

@@ -11,4 +11,12 @@ export const API = {
     FULL: '/bundles',
     SLUG: '/bundles/:slug',
   },
+  BORDER_LEVELS: {
+    FULL: '/levelborders',
+    SLUG: '/levelborders/:slug',
+  },
+  MAPS: {
+    FULL: 'https://valorant-api.com/v1/maps',
+    SLUG: 'https://valorant-api.com/v1/maps/:slug',
+  },
 };
