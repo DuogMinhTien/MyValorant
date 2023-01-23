@@ -1,0 +1,29 @@
+.current-match {
+  //   width: 60vw;
+  //   height: 200px;
+  background-color: $color-gray;
+  border-radius: 6px;
+  display: flex;
+  column-gap: 16px;
+  padding: 16px;
+  .team-red,
+  .team-blue {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+}
+
+.reload {
+  display: flex;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: $color-primary;
+  color: #fff;
+  font-weight: bold;
+  z-index: 1000;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}

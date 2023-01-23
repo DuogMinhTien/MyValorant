@@ -19,4 +19,8 @@ export const API = {
     FULL: 'https://valorant-api.com/v1/maps',
     SLUG: 'https://valorant-api.com/v1/maps/:slug',
   },
+  TIER: {
+    FULL: 'https://valorant-api.com/v1/competitivetiers',
+    SLUG: 'https://valorant-api.com/v1/competitivetiers/:slug',
+  },
 };

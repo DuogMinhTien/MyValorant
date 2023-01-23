@@ -1,0 +1,54 @@
+.infor-player {
+  background-color: $color-black;
+  border-radius: 6px;
+  padding: 6px;
+  display: flex;
+  column-gap: 12px;
+  align-items: center;
+  .avatar {
+    position: relative;
+    img {
+      width: 75px;
+      height: 75px;
+    }
+    .level {
+      position: absolute;
+      background-color: aqua;
+      bottom: 0;
+      left: 0;
+      border-radius: 6px;
+      padding: 4px;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  }
+  .second-col {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+    .name-agent {
+      color: aqua;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+    .name-player {
+      color: #fff;
+    }
+  }
+  .third-3 {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 6px;
+    .img-tier {
+      width: 70px;
+      height: 70px;
+    }
+    .name-tier {
+      color: #fff;
+      font-size: 1.2rem;
+    }
+  }
+}

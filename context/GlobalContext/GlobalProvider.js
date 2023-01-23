@@ -11,6 +11,7 @@ const GlobalContext = createContext();
 
 const GlobalProvider = ({ children }) => {
   const [openNavBar, setOpenNavBar] = useState(true);
+  const [openLoading, setOpenLoading] = useState(false);
   return (
     <>
       <GlobalContext.Provider
@@ -18,6 +19,10 @@ const GlobalProvider = ({ children }) => {
           openNavBar: {
             state: openNavBar,
             setState: setOpenNavBar,
+          },
+          openLoading: {
+            state: openLoading,
+            setState: setOpenLoading,
           },
         }}
       >

@@ -9,6 +9,7 @@ import icon from '~/public/favicon.ico';
 // import headerBg from '~/public/imgs/background/header-bg.png';
 import ScrollToTop from '~/components/common/ScrollToTop';
 import NavBar from '~/components/common/NavBar';
+import LoadingContainer from '~/containers/LoadingContainer';
 
 export default function MainLayout({ children, title = '', currentPage = '', data = null, meta_data = null }) {
   const titlePage = !!title ? 'MyValorant - ' + title : 'MyValorant';
@@ -71,6 +72,7 @@ export default function MainLayout({ children, title = '', currentPage = '', dat
       </Head>
 
       <div className={`${styles['body']}`}>
+        <LoadingContainer />
         <NavBar />
         <div className={`${styles['main']}`}>
           <Header currentPage={currentPage} />
