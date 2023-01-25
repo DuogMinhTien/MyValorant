@@ -47,21 +47,24 @@ export default function MyAccountContainer() {
               <h3 className={styles['name-acc']}>{data?.data?.name}</h3>
               <label className={styles['tagline-acc']}>#{data?.data?.tag}</label>
             </div>
-            <div
-              className={styles['level']}
-              style={{
-                background: `url(${nowLevel?.levelNumberAppearance})`,
-              }}
-            >
-              {/* <img src={nowLevel?.levelNumberAppearance} className={styles['border-level']} /> */}
-              <label
-                className={styles['label-level']}
+            <div className={styles['under']}>
+              <div
+                className={styles['level']}
                 style={{
-                  fontSize: data?.data?.account_level >= 100 ? '1rem' : '1.2rem',
+                  background: `url(${nowLevel?.levelNumberAppearance})`,
                 }}
               >
-                {data?.data?.account_level}
-              </label>
+                {/* <img src={nowLevel?.levelNumberAppearance} className={styles['border-level']} /> */}
+                <label
+                  className={styles['label-level']}
+                  style={{
+                    fontSize: data?.data?.account_level >= 100 ? '1rem' : '1.2rem',
+                  }}
+                >
+                  {data?.data?.account_level}
+                </label>
+              </div>
+              <i className={`fa-solid fa-repeat ${styles['switch-account']}`}></i>
             </div>
           </div>
         </div>

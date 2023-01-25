@@ -60,7 +60,12 @@ export default function CurrentMatch({ open, setOpen }) {
               <div className={styles['team-red']}>
                 {dataMatch?.players?.red?.map((item, index) => {
                   return (
-                    <InforPlayer data={item} key={index} tier={dataTier?.data[dataTier?.data?.length - 1]?.tiers} />
+                    <InforPlayer
+                      data={item}
+                      key={index}
+                      tier={dataTier?.data[dataTier?.data?.length - 1]?.tiers}
+                      isUser={item?.name === inforAcc?.state?.username}
+                    />
                   );
                 })}
               </div>
@@ -72,6 +77,7 @@ export default function CurrentMatch({ open, setOpen }) {
                       teamBlue={true}
                       key={index}
                       tier={dataTier?.data[dataTier?.data?.length - 1]?.tiers}
+                      isUser={item?.name === inforAcc?.state?.username}
                     />
                   );
                 })}

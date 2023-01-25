@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useGetDetailAccount } from '~/hooks/api/useAccount';
 import styles from './styles.module.scss';
-export default function InforPlayer({ data, tier, teamBlue }) {
+export default function InforPlayer({ data, tier, teamBlue, isUser }) {
   const [currentTier, setCurrentTier] = useState({});
   const { data: dataPlayer, refetch: refetchAcc } = useGetDetailAccount(
     {
@@ -25,6 +25,8 @@ export default function InforPlayer({ data, tier, teamBlue }) {
       className={styles['infor-player']}
       style={{
         flexDirection: teamBlue ? 'row-reverse' : 'row',
+        border: `3px solid ${teamBlue ? '#2B8CEE' : '#FF4655'}`,
+        backgroundColor: isUser ? '#b59600' : '',
       }}
     >
       <div className={styles['avatar']}>
