@@ -1,9 +1,8 @@
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import LineUps from '~/components/agents/LineUps';
 import Container from '~/components/base/Container';
-import Filter from '~/components/common/Filter';
 import { useGetAgentsDetail, useGetAgentsDetailEn } from '~/hooks/api/useAgents';
 import styles from './styles.module.scss';
 export default function AgentDetailContainer() {
@@ -104,12 +103,7 @@ export default function AgentDetailContainer() {
               </div>
             </div>
           </div>
-          <div className={styles['lineups']}>
-            <h3 className={styles['title']}>LINEUPS</h3>
-            <div className={styles['filters']}>
-              <Filter />
-            </div>
-          </div>
+          <LineUps />
         </>
       )}
     </Container>
