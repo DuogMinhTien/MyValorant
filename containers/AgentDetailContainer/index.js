@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Container from '~/components/base/Container';
+import Filter from '~/components/common/Filter';
 import { useGetAgentsDetail, useGetAgentsDetailEn } from '~/hooks/api/useAgents';
 import styles from './styles.module.scss';
 export default function AgentDetailContainer() {
@@ -55,51 +56,61 @@ export default function AgentDetailContainer() {
       {isLoading ? (
         <></>
       ) : (
-        <div className={styles['main']}>
-          <div className={styles['agent-char']}>
-            <img src={data?.data?.background} className={styles['background']} />
-            <img src={data?.data?.fullPortraitV2} className={styles['character']} />
-          </div>
-          <div className={styles['infor']}>
-            <h2
-              className={styles['title']}
-              style={{
-                background: `linear-gradient(to top left, ${handleGradientText(data?.data?.backgroundGradientColors)})`,
-              }}
-            >
-              {data?.data?.displayName}
-            </h2>
-            {voiceLine ? (
-              <audio
-                controls
-                className={styles['audio']}
-                onError={(e) => {
-                  refetch();
+        <>
+          <div className={styles['main']}>
+            <div className={styles['agent-char']}>
+              <img src={data?.data?.background} className={styles['background']} />
+              <img src={data?.data?.fullPortraitV2} className={styles['character']} />
+            </div>
+            <div className={styles['infor']}>
+              <h2
+                className={styles['title']}
+                style={{
+                  background: `linear-gradient(to top left, ${handleGradientText(
+                    data?.data?.backgroundGradientColors
+                  )})`,
                 }}
               >
-                {voiceLine?.wem && <source src={voiceLine.wem} type="audio/wem" />}
-                {voiceLine?.wav && <source src={voiceLine.wav} type="audio/wav" />}
-                Your browser does not support the audio element.
-              </audio>
-            ) : (
-              <></>
-            )}
-            <p className={styles['description']}>{data?.data?.description}</p>
-            <div className={styles['other-infor']}>
-              <p className={styles['infor-other-detail']}>
-                <label className={styles['title-other-infor']}>Vai trò:</label>
-                <div className={styles['other-infor-link']} title={data?.data?.role.description}>
-                  <label>{data?.data?.role.displayName}</label>
-                  <img src={data?.data?.role?.displayIcon} />
-                </div>
-              </p>
-              <p className={styles['infor-other-detail']}>
-                <label className={styles['title-other-infor']}>Tên Dev:</label>
-                <label>{data?.data?.developerName}</label>
-              </p>
+                {data?.data?.displayName}
+              </h2>
+              {voiceLine ? (
+                <audio
+                  controls
+                  className={styles['audio']}
+                  onError={(e) => {
+                    refetch();
+                  }}
+                >
+                  {voiceLine?.wem && <source src={voiceLine.wem} type="audio/wem" />}
+                  {voiceLine?.wav && <source src={voiceLine.wav} type="audio/wav" />}
+                  Your browser does not support the audio element.
+                </audio>
+              ) : (
+                <></>
+              )}
+              <p className={styles['description']}>{data?.data?.description}</p>
+              <div className={styles['other-infor']}>
+                <p className={styles['infor-other-detail']}>
+                  <label className={styles['title-other-infor']}>Vai trò:</label>
+                  <div className={styles['other-infor-link']} title={data?.data?.role.description}>
+                    <label>{data?.data?.role.displayName}</label>
+                    <img src={data?.data?.role?.displayIcon} />
+                  </div>
+                </p>
+                <p className={styles['infor-other-detail']}>
+                  <label className={styles['title-other-infor']}>Tên Dev:</label>
+                  <label>{data?.data?.developerName}</label>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+          <div className={styles['lineups']}>
+            <h3 className={styles['title']}>LINEUPS</h3>
+            <div className={styles['filters']}>
+              <Filter />
+            </div>
+          </div>
+        </>
       )}
     </Container>
   );

@@ -1,0 +1,45 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4xpx;
+  position: relative;
+  .title {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  .show-option {
+    color: #fff;
+    background-color: #384f66;
+    display: inline-block;
+    width: max-content;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    column-gap: 12px;
+    align-items: center;
+    font-weight: bold;
+    user-select: none;
+  }
+  .list {
+    background-color: #384f66;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 4px);
+    z-index: 10;
+    border-radius: 6px;
+    overflow: hidden;
+    .option {
+      color: #fff;
+      padding: 8px 20px;
+      font-size: 1.6rem;
+      cursor: pointer;
+      font-family: 'Kanit';
+      &:hover {
+        border-left: 4px solid $color-primary;
+        background-color: $color-purple;
+      }
+    }
+  }
+}

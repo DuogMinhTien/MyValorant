@@ -21,10 +21,12 @@ export default function Footer() {
             {
               to: 'https://github.com/Henrik-3/unofficial-valorant-api',
               text: 'Henrik Github',
+              outside: true,
             },
             {
               to: 'https://dash.valorant-api.com/',
               text: 'API Valorant',
+              outside: true,
             },
           ]}
         />

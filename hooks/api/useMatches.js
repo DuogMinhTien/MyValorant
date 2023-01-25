@@ -2,16 +2,18 @@ import { useInfiniteQuery, useMutation, useQuery } from 'react-query';
 import { API } from '~/core/api/config';
 import api, { encodeQueryData, setDefaultHeaders } from '~/core/api/api';
 
-async function getCurrentMatch() {
+async function getCurrentMatch(filters) {
   //   filters = encodeQueryData({ ...filters, isPlayableCharacter: true });
   const { data } = await api.get(
-    'https://api.henrikdev.xyz/valorant/v3/by-puuid/matches/ap/29b81e17-8292-5a8d-b57b-d046c77f16b7?size=1'
+    `https://api.henrikdev.xyz/valorant/v3/by-puuid/matches/${filters?.region || 'ap'}/${filters?.puuid}?size=${
+      filters?.size || '1'
+    }`
   );
   return data;
 }
 
-export const useGetCurrentMatch = () => {
-  return useQuery(['get-current-match'], () => getCurrentMatch());
+export const useGetCurrentMatch = (filters) => {
+  return useQuery(['get-current-match'], () => getCurrentMatch(filters));
 };
 
 async function getListTier(filters) {

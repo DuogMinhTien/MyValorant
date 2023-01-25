@@ -6,8 +6,6 @@ import Input from '~/components/base/Input';
 import Button from '~/components/base/Button';
 import Space from '~/components/base/Space';
 
-import { useGetPostHeadlinesInfinity } from '~/hooks';
-
 export default function SearchContainer() {
   const [valueInput, setValueInput] = useState('');
   const router = useRouter();

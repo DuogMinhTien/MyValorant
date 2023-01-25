@@ -127,3 +127,12 @@
 .audio::-webkit-media-controls-panel {
   // background-color: $color-black;
 }
+
+.lineups {
+  margin-top: 24px;
+  .title {
+    color: #fff;
+    font-size: 4.8rem;
+    font-family: 'Signika';
+  }
+}

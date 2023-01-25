@@ -7,19 +7,26 @@ import InforPlayer from './InforPlayer';
 import styles from './styles.module.scss';
 
 export default function CurrentMatch({ open, setOpen }) {
-  const { data, isFetching, isFetched, refetch, isRefetching } = useGetCurrentMatch();
   const { data: dataTier } = useGetListTier({
     language: 'vi-VN',
   });
-  const openLoading = useGlobal(Constant.openLoading);
+  const { openLoading, inforAcc } = useGlobal([Constant.openLoading, Constant.inforAcc]);
+  const { data, isFetching, isFetched, refetch, isRefetching } = useGetCurrentMatch({
+    puuid: inforAcc?.state?.puuid,
+  });
   const [dataMatch, setDataMatch] = useState();
-  useState(() => {
+  useEffect(() => {
+    if (open) {
+      refetch();
+    }
+  }, [open]);
+  useEffect(() => {
     if ((isFetching || !isFetched || isRefetching) && open) {
       openLoading.setState(true);
     } else {
       openLoading.setState(false);
     }
-  }, [isFetching, isFetched, open, isRefetching]);
+  }, [isFetching, isFetched, open]);
   useEffect(() => {
     setDataMatch(data?.data[0]);
   }, [data]);
@@ -48,7 +55,14 @@ export default function CurrentMatch({ open, setOpen }) {
             </div>
             <div className={styles['team-blue']}>
               {dataMatch?.players?.blue?.map((item, index) => {
-                return <InforPlayer data={item} key={index} tier={dataTier?.data[dataTier?.data?.length - 1]?.tiers} />;
+                return (
+                  <InforPlayer
+                    data={item}
+                    teamBlue={true}
+                    key={index}
+                    tier={dataTier?.data[dataTier?.data?.length - 1]?.tiers}
+                  />
+                );
               })}
             </div>
           </div>

@@ -3,14 +3,16 @@ import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 import CurrentMatch from '~/components/account/CurrentMatch';
 import Container from '~/components/base/Container';
+import { Constant, useGlobal } from '~/context/GlobalContext';
 import { useGetAccount, useGetBorderLevel } from '~/hooks/api/useAccount';
 import styles from './styles.module.scss';
 export default function MyAccountContainer() {
   const [nowLevel, setNowLevel] = useState({});
+  const inforAcc = useGlobal(Constant.inforAcc);
   const [open, setOpen] = useState(false);
   const { data } = useGetAccount({
-    username: 'BáoQuáTiếnÊi',
-    tagline: '7290',
+    username: inforAcc.state.username,
+    tagline: inforAcc.state.tagline,
   });
   const { data: dataBorderLevel } = useGetBorderLevel();
   useEffect(() => {
@@ -20,6 +22,10 @@ export default function MyAccountContainer() {
     if (x) {
       setNowLevel(x[x?.length - 1]);
     }
+    inforAcc.setState((prev) => {
+      let newVal = { ...prev, puuid: data?.data?.puuid };
+      return newVal;
+    });
   }, [data, dataBorderLevel]);
   return (
     <>

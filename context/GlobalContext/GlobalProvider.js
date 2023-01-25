@@ -10,8 +10,9 @@ import { createContext } from 'react';
 const GlobalContext = createContext();
 
 const GlobalProvider = ({ children }) => {
-  const [openNavBar, setOpenNavBar] = useState(true);
+  const [openNavBar, setOpenNavBar] = useState(false);
   const [openLoading, setOpenLoading] = useState(false);
+  const [inforAcc, setInforAcc] = useState({ username: 'BáoQuáTiếnÊi', tagline: '7290', puuid: '' });
   return (
     <>
       <GlobalContext.Provider
@@ -23,6 +24,10 @@ const GlobalProvider = ({ children }) => {
           openLoading: {
             state: openLoading,
             setState: setOpenLoading,
+          },
+          inforAcc: {
+            state: inforAcc,
+            setState: setInforAcc,
           },
         }}
       >
