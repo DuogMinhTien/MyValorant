@@ -48,22 +48,34 @@ export default function CurrentMatch({ open, setOpen }) {
             Reload
           </div>
           <div className={styles['current-match']}>
-            <div className={styles['team-red']}>
-              {dataMatch?.players?.red?.map((item, index) => {
-                return <InforPlayer data={item} key={index} tier={dataTier?.data[dataTier?.data?.length - 1]?.tiers} />;
-              })}
+            <div className={styles['other-infor']}>
+              <span className={styles['item-other-infor']}>
+                <label className={styles['title-other-infor']}>Mode</label> {dataMatch?.metadata?.mode}
+              </span>
+              <span className={styles['item-other-infor']}>
+                <label className={styles['title-other-infor']}>Map</label> {dataMatch?.metadata?.map}
+              </span>
             </div>
-            <div className={styles['team-blue']}>
-              {dataMatch?.players?.blue?.map((item, index) => {
-                return (
-                  <InforPlayer
-                    data={item}
-                    teamBlue={true}
-                    key={index}
-                    tier={dataTier?.data[dataTier?.data?.length - 1]?.tiers}
-                  />
-                );
-              })}
+            <div className={styles['match-team']}>
+              <div className={styles['team-red']}>
+                {dataMatch?.players?.red?.map((item, index) => {
+                  return (
+                    <InforPlayer data={item} key={index} tier={dataTier?.data[dataTier?.data?.length - 1]?.tiers} />
+                  );
+                })}
+              </div>
+              <div className={styles['team-blue']}>
+                {dataMatch?.players?.blue?.map((item, index) => {
+                  return (
+                    <InforPlayer
+                      data={item}
+                      teamBlue={true}
+                      key={index}
+                      tier={dataTier?.data[dataTier?.data?.length - 1]?.tiers}
+                    />
+                  );
+                })}
+              </div>
             </div>
           </div>
         </PopupModal>

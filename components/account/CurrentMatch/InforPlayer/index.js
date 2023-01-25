@@ -1,14 +1,25 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { useGetDetailAccount } from '~/hooks/api/useAccount';
 import styles from './styles.module.scss';
 export default function InforPlayer({ data, tier, teamBlue }) {
   const [currentTier, setCurrentTier] = useState({});
+  const { data: dataPlayer, refetch: refetchAcc } = useGetDetailAccount(
+    {
+      mode: 'mmr',
+      puuid: data?.puuid,
+    },
+    data?.name
+  );
   useEffect(() => {
     let x = tier?.filter((item, index) => {
-      return item?.tier === data?.currenttier;
+      return item?.tier === dataPlayer?.data?.highest_rank?.tier;
     });
     setCurrentTier(x[0]);
-  }, [tier]);
+  }, [tier, data, dataPlayer]);
+  useEffect(() => {
+    refetchAcc();
+  }, [data]);
   return (
     <div
       className={styles['infor-player']}
@@ -49,8 +60,8 @@ export default function InforPlayer({ data, tier, teamBlue }) {
           marginRight: teamBlue ? 'auto' : '',
         }}
       >
-        <img className={styles['img-tier']} src={currentTier?.largeIcon} />
-        {currentTier?.tier > 2 && <label className={styles['name-tier']}>{currentTier?.tierName}</label>}
+        <img className={styles['img-tier']} src={currentTier?.largeIcon} title={currentTier?.tierName} />
+        {/* {currentTier?.tier > 2 && } */}
       </div>
     </div>
   );

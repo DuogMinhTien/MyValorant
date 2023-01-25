@@ -23,7 +23,7 @@ function Filter({ title, list = [] }, ref) {
         }}
       >
         {value?.text}
-        <i class="fa-solid fa-caret-down"></i>
+        <i className="fa-solid fa-caret-down"></i>
       </div>
       {open && (
         <div className={styles['list']}>

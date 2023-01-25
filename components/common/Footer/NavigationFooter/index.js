@@ -6,8 +6,8 @@ export default function NavigationFooter({ className, title = '', list = [] }) {
     <div className={`${styles['navigation-footer']} ${className}`}>
       <h4 className={styles['title']}>{title}</h4>
       <div className={styles['navigation-footer__list']}>
-        {list?.map((item) => {
-          return <NavigateLink to={item.to} text={item.text} outside={item?.outside} />;
+        {list?.map((item, index) => {
+          return <NavigateLink key={index} to={item.to} text={item.text} outside={item?.outside} />;
         })}
       </div>
     </div>

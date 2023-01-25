@@ -41,9 +41,9 @@ export default function ItemNav({ icon, label, list = [], to = '/' }) {
       </div>
       {list?.length > 0 ? (
         <div className={`${styles['list-nav']} ${open ? styles['show'] : ''}`}>
-          {list?.map((item) => {
+          {list?.map((item, index) => {
             return (
-              <Link href={item.to || '/'}>
+              <Link key={index} href={item.to || '/'}>
                 <a className={styles['item-nav']}>
                   <span
                     className={`mud-icon-root mud-icon-default mud-icon-size-medium mud-nav-link-icon mud-nav-link-icon-default ${item?.icon}`}

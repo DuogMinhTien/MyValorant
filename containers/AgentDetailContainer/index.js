@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import LineUps from '~/components/agents/LineUps';
 import Container from '~/components/base/Container';
+import { crawlData } from '~/core/crawl/utils';
 import { useGetAgentsDetail, useGetAgentsDetailEn } from '~/hooks/api/useAgents';
 import styles from './styles.module.scss';
 export default function AgentDetailContainer() {
@@ -50,6 +50,7 @@ export default function AgentDetailContainer() {
       return { wav: x.wave, wem: x.wise };
     });
   }, [dataEn, isRefetching]);
+  crawlData();
   return (
     <Container>
       {isLoading ? (
@@ -89,13 +90,13 @@ export default function AgentDetailContainer() {
               )}
               <p className={styles['description']}>{data?.data?.description}</p>
               <div className={styles['other-infor']}>
-                <p className={styles['infor-other-detail']}>
+                <div className={styles['infor-other-detail']}>
                   <label className={styles['title-other-infor']}>Vai trò:</label>
                   <div className={styles['other-infor-link']} title={data?.data?.role.description}>
                     <label>{data?.data?.role.displayName}</label>
                     <img src={data?.data?.role?.displayIcon} />
                   </div>
-                </p>
+                </div>
                 <p className={styles['infor-other-detail']}>
                   <label className={styles['title-other-infor']}>Tên Dev:</label>
                   <label>{data?.data?.developerName}</label>
@@ -103,7 +104,6 @@ export default function AgentDetailContainer() {
               </div>
             </div>
           </div>
-          <LineUps />
         </>
       )}
     </Container>

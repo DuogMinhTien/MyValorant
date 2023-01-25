@@ -23,3 +23,15 @@ async function getBorderLevel() {
 export const useGetBorderLevel = () => {
   return useQuery(['get-border-level'], () => getBorderLevel());
 };
+async function getDetailAccount({ mode = 'mmr', puuid }) {
+  let url = 'https://api.henrikdev.xyz/valorant/v2/by-puuid/:mode/ap/:puuid';
+  // console.log(pageParam, slug);
+  url = url.replace(':mode', mode);
+  url = url.replace(':puuid', puuid);
+  const { data } = await api.get(url);
+  return data;
+}
+
+export const useGetDetailAccount = (filters, key) => {
+  return useQuery(['get-detail-account', key], () => getDetailAccount(filters));
+};
