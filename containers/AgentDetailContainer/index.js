@@ -49,7 +49,6 @@ export default function AgentDetailContainer() {
       return { wav: x.wave, wem: x.wise };
     });
   }, [dataEn, isRefetching]);
-  crawlData();
   return (
     <Container>
       {isLoading ? (

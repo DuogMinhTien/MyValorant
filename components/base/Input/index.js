@@ -32,7 +32,7 @@ export default function Input({
   return (
     <div
       className={`${styles['form-control']} ${responsive && styles['responsive']}`}
-      style={{ ...style, border: border ? '2px solid #b1b5c3' : 'none', backgroundColor: backgroundColor }}
+      style={{ ...style, border: border ? '' : 'none', backgroundColor: backgroundColor }}
     >
       <label className={styles['form-label']} htmlFor={id}>
         {label}

@@ -1,16 +1,19 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { toast } from 'react-toastify';
+import ChangeAcc from '~/components/account/ChangeAcc';
 import CurrentMatch from '~/components/account/CurrentMatch';
 import Container from '~/components/base/Container';
+import PopupModal from '~/components/base/PopupModal';
 import { Constant, useGlobal } from '~/context/GlobalContext';
 import { useGetAccount, useGetBorderLevel } from '~/hooks/api/useAccount';
 import styles from './styles.module.scss';
 export default function MyAccountContainer() {
   const [nowLevel, setNowLevel] = useState({});
-  const inforAcc = useGlobal(Constant.inforAcc);
+  const { inforAcc, openLoading } = useGlobal([Constant.inforAcc, Constant.openLoading]);
   const [open, setOpen] = useState(false);
-  const { data } = useGetAccount({
+  const [openChangeAcc, setOpenChangeAcc] = useState(false);
+  const { data, refetch, status } = useGetAccount({
     username: inforAcc.state.username,
     tagline: inforAcc.state.tagline,
   });
@@ -27,8 +30,38 @@ export default function MyAccountContainer() {
       return newVal;
     });
   }, [data, dataBorderLevel]);
+  useEffect(() => {
+    refetch();
+  }, [inforAcc]);
+  useEffect(() => {
+    if (inforAcc.state.username === data?.data?.name) {
+      openLoading.setState(false);
+    } else {
+      setTimeout(() => {
+        if (status === 'error') {
+          openLoading.setState(false);
+        }
+      }, 500);
+    }
+  }, [data, inforAcc, status]);
   return (
     <>
+      <PopupModal
+        open={openChangeAcc}
+        onClose={() => {
+          setOpenChangeAcc(false);
+        }}
+      >
+        <ChangeAcc
+          setInforAcc={inforAcc.setState}
+          onClose={() => {
+            setOpenChangeAcc(false);
+          }}
+          setStateLoading={() => {
+            openLoading.setState(true);
+          }}
+        />
+      </PopupModal>
       <CurrentMatch open={open} setOpen={setOpen} />
       <Container>
         <p
@@ -64,7 +97,12 @@ export default function MyAccountContainer() {
                   {data?.data?.account_level}
                 </label>
               </div>
-              <i className={`fa-solid fa-repeat ${styles['switch-account']}`}></i>
+              <i
+                className={`fa-solid fa-repeat ${styles['switch-account']}`}
+                onClick={() => {
+                  setOpenChangeAcc(true);
+                }}
+              ></i>
             </div>
           </div>
         </div>
