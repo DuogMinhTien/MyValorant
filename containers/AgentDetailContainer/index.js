@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Container from '~/components/base/Container';
-import { crawlData } from '~/core/crawl/utils';
 import { useGetAgentsDetail, useGetAgentsDetailEn } from '~/hooks/api/useAgents';
 import styles from './styles.module.scss';
 export default function AgentDetailContainer() {

@@ -1,0 +1,26 @@
+.list-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 6px;
+  row-gap: 6px;
+}
+
+.back-bundles {
+  color: #fff;
+  margin-bottom: 24px;
+  font-size: 2rem;
+  display: flex;
+  column-gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  cursor: pointer;
+  font-family: 'Kanit';
+  user-select: none;
+  * {
+    cursor: pointer;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}

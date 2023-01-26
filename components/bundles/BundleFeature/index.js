@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useGetBundleSlug } from '~/hooks/api/useFeature';
 import styles from './styles.module.scss';
-export default function BundleFeature({ data }) {
+export default function BundleFeature({ data, onClick = () => {} }) {
   const { data: data_bundle } = useGetBundleSlug({
     slug: data.bundle_uuid,
   });
@@ -49,7 +49,7 @@ export default function BundleFeature({ data }) {
   }, [data_bundle]);
 
   return (
-    <div className={styles['bundle-feature']}>
+    <div className={styles['bundle-feature']} onClick={onClick}>
       <img src={data_bundle?.data?.displayIcon} className={styles['bg-img']} />
       <div className={styles['infor']}>
         <div className={styles['time-remain']}>
